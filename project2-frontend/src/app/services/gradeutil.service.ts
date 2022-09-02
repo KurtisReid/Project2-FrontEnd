@@ -34,8 +34,8 @@ export class GradeutilService {
     return savedGrade;
   }
 
-  async deleteGrade(id:number):Promise<Grade[]>{
-    const observable = this.http.delete<Grade[]>("http://localhost:8080/grades/" + id);
+  async deleteGrade(id:number):Promise<string>{
+    const observable = this.http.delete<string>("http://localhost:8080/grades/" + id);
     const grades = await firstValueFrom(observable);
     return grades;
   }
