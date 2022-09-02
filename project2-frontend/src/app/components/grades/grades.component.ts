@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { GradeutilService } from 'src/app/services/gradeutil.service';
+import { Grade } from 'src/app/models/grade';
+import { Student } from 'src/app/models/student';
+import { StudentutilService } from 'src/app/services/studentutil.service';
 
 @Component({
   selector: 'app-grades',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GradesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gradeService:GradeutilService, private studentService:StudentutilService) { }
+  grades:Grade[] = [];
+  students:Student = {id : 0,firstName:"",lastName:"",guardianUsername:""}
+  id:number = 1;
+  gIds:number = 0;
+  retStr:string = "hello";
+
 
   ngOnInit(): void {
+    (async () => {
+      //this.grades = await this.gradeService.getGradeByStudentId(this.id);
+      //this.students = await this.studentService.getStudentById(this.id);
+      this.students = {id : 1,firstName:"John",lastName:"Jacob",guardianUsername:"Astor"}
+      this.grades = [{gId: 1, studentId:1, timeReported:1220, note: "he is a monster", behavior:"EVIL"}, {gId: 2 , studentId:1, timeReported:1220, note: "he is petty bourgiuse", behavior:"EVIL"}];
+    })();
+
+
+  }
+
+  async deleteGrade(gIds:number)
+  {
+    const deletedGrade: string = await this.gradeService.deleteGrade(gIds);
+    this.retStr = deletedGrade;
+
   }
 
 }
+
+

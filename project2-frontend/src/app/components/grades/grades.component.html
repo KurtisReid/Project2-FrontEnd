@@ -1,1 +1,28 @@
-<p>grades works!</p>
+<h3 *ngIf="students.id !== 0">{{students.firstName}} {{students.lastName}} grades</h3>
+
+<table *ngIf="grades.length !== 0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Grade</th>
+            <th>Notes</th>
+            <th>Action button</th>
+        </tr>
+
+
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let g of grades">
+            <td>{{g.gId}}</td>
+            <td>{{g.timeReported}}</td>
+            <td>{{g.behavior}}</td>
+            <td>{{g.note}}</td>
+            <td><button (click)="deleteGrade">delete</button></td>
+        </tr>
+    </tbody>
+
+
+
+</table>
