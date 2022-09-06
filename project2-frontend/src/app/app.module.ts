@@ -10,6 +10,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { StudentsComponent } from './components/students/students.component';
+import { GradesPageComponent } from './components/grades-page/grades-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StudentsComponent } from './components/students/students.component';
     StudentFormComponent,
     StudentsComponent,
     GradeFormComponent,
-    GradesComponent
+    GradesComponent,
+    GradesPageComponent
   ],
   imports: [
     BrowserModule,
