@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { StudentsComponent } from './components/students/students.component';
+import { GradesPageComponent } from './components/grades-page/grades-page.component';
 import { StudentPageComponent } from './components/student-page/student-page.component';
 
 @NgModule({
@@ -21,6 +23,7 @@ import { StudentPageComponent } from './components/student-page/student-page.com
     StudentsComponent,
     GradeFormComponent,
     GradesComponent,
+    GradesPageComponent,
     StudentPageComponent
   ],
   imports: [
@@ -28,7 +31,8 @@ import { StudentPageComponent } from './components/student-page/student-page.com
     AppRoutingModule,
     HttpClientModule
   ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

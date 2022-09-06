@@ -1,4 +1,8 @@
-<h3 *ngIf="students.id !== 0">{{students.firstName}} {{students.lastName}} grades</h3>
+<div class="col-md-4">
+  <h3 *ngIf="students.id !== 0">
+    {{ students.firstName }} {{ students.lastName }} grades
+  </h3>
+
 
 <table class="table table-hover" *ngIf="grades.length !== 0">
     <thead>
@@ -21,8 +25,7 @@
             <td class="table-info">{{g.note}}</td>
             <td><button class="btn btn-danger" (click)="deleteGrade">delete</button></td>
         </tr>
+
     </tbody>
-
-
-
-</table>
+  </table>
+</div>
