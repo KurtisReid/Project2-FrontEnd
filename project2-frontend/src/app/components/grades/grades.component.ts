@@ -21,10 +21,10 @@ export class GradesComponent implements OnInit {
 
   ngOnInit(): void {
     (async () => {
-      //this.grades = await this.gradeService.getGradeByStudentId(this.id);
-      //this.students = await this.studentService.getStudentById(this.id);
-      this.students = {id : 1,firstName:"John",lastName:"Jacob",guardianUsername:"Astor"}
-      this.grades = [{gId: 1, studentId:1, timeReported:1220, note: "he is a monster", behavior:"EVIL"}, {gId: 2 , studentId:1, timeReported:1220, note: "he is petty baby", behavior:"EVIL"}];
+      this.grades = await this.gradeService.getGradeByStudentId(1);
+      this.students = await this.studentService.getStudentById(1);
+      //this.students = {id : 1,firstName:"John",lastName:"Jacob",guardianUsername:"Astor"}
+      //this.grades = [{gId: 1, studentId:1, timeReported:1220, note: "he is a monster", behavior:"EVIL"}, {gId: 2 , studentId:1, timeReported:1220, note: "he is petty baby", behavior:"EVIL"}];
     })();
 
 

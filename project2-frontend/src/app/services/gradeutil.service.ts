@@ -23,8 +23,10 @@ export class GradeutilService {
   }
 
   async getGradeByStudentId(id:number):Promise<Grade[]>{
+    console.log(id);
     const observable = this.http.get<Grade[]>("http://localhost:8080/grades/" + id);
     const grades = await firstValueFrom(observable);
+    console.log("grade4s" + grades);
     return grades;
   }
 
