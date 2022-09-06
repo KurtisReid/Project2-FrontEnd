@@ -10,9 +10,10 @@
           <span class="input-group-text">Name</span>
           <input
             id="student-name"
-            value="{kid name here}"
+            value="{{ firstName }}"
             type="text"
             disabled
+            [(ngModel)]="firstName"
           />
         </div>
 
@@ -22,6 +23,8 @@
           <span class="input-group-text">Grade</span>
 
           <!-- Radio list items -->
+          <!-- If targeted radio button is selected, take value and set = to behavior/(aka grade) 
+          ie. *ngIf="" -->
           <div class="form-check">
             <input
               class="form-check-input"
@@ -61,7 +64,7 @@
       <div class="input-group mb-3">
         <div class="input-group date">
           <span class="input-group-text">Date Posted</span>
-          <input type="date" required="required" />
+          <input type="date" required="required" [(ngModel)]="date" />
         </div>
       </div>
 
@@ -77,10 +80,13 @@
           aria-label="With textarea"
           cols="10"
           rows="3"
+          [(ngModel)]="notes"
         ></textarea>
       </div>
 
-      <button class="btn btn-primary" type="submit">Submit</button>
+      <button class="btn btn-primary" type="submit" (click)="createNewGrade()">
+        Submit
+      </button>
     </form>
   </div>
 </div>
