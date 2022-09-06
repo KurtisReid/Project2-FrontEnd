@@ -17,7 +17,7 @@ export class StudentutilService {
   }
 
   async getStudentById(id:number):Promise<Student>{
-    const observable = this.http.get<Student>("http://localhost:8080/students/" + id);
+    const observable = this.http.get<Student>("http://localhost:8080/students/byId/" + id);
     const savedStudent = await firstValueFrom(observable);
     return savedStudent;
   }

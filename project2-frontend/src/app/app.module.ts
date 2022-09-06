@@ -12,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { StudentsComponent } from './components/students/students.component';
 import { GradesPageComponent } from './components/grades-page/grades-page.component';
+import { StudentPageComponent } from './components/student-page/student-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,12 @@ import { GradesPageComponent } from './components/grades-page/grades-page.compon
     GradeFormComponent,
     GradesComponent,
     GradesPageComponent,
+    StudentPageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
