@@ -9,6 +9,7 @@
         <div class="input-group mb-3">
           <span class="input-group-text">Name</span>
           <input
+          name="firstName"
             id="student-name"
             value="{{ firstName }}"
             type="text"
@@ -64,7 +65,12 @@
       <div class="input-group mb-3">
         <div class="input-group date">
           <span class="input-group-text">Date Posted</span>
-          <input type="date" required="required" [(ngModel)]="date" />
+          <input
+            type="date"
+            required="required"
+            [(ngModel)]="date"
+            name="date"
+          />
         </div>
       </div>
 
@@ -81,6 +87,7 @@
           cols="10"
           rows="3"
           [(ngModel)]="notes"
+          name="notes"
         ></textarea>
       </div>
 
