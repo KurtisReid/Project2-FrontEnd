@@ -27,11 +27,11 @@ import { StudentPageComponent } from './components/student-page/student-page.com
     StudentPageComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule, 
+    FormsModule
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
