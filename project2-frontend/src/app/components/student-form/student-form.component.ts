@@ -20,8 +20,10 @@ export class StudentFormComponent implements OnInit {
   }
 
   async register(){
+    console.log("here")
     const student: Student = {id:0, firstName:this.firstName, lastName:this.lastName, guardianUsername:this.guardianUsername};
     const savedStudent: Student = await this.studentService.createStudent(student);
+    console.log(savedStudent);
     this.savedId = savedStudent.id;
   }
 
