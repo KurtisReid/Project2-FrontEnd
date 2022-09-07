@@ -16,13 +16,18 @@ export class GradeFormComponent implements OnInit {
     private gradeService: GradeutilService
   ) {}
 
-  grade: Grade = {
-    gId: 0,
-    studentId: 0,
-    timeReported: 0,
-    note: '',
-    behavior: '',
-  };
+  studentId:number = 0;
+  timeReported:number = 0;
+  note:string = "";
+  behavior:string = "";
+  savedId:number = 0;
+  // grade: Grade = {
+  //   gId: 0,
+  //   studentId: 0,
+  //   timeReported: 0,
+  //   note: '',
+  //   behavior: '',
+  // };
 
   ngOnInit(): void {}
 
@@ -30,11 +35,11 @@ export class GradeFormComponent implements OnInit {
     const newGrade: Grade = {
       gId: 0,
       studentId: 0,
-      timeReported: this.grade.timeReported,
-      note: this.grade.note,
-      behavior: this.grade.behavior,
+      timeReported: this.timeReported,
+      note: this.note,
+      behavior: this.behavior,
     };
     const savedGrade: Grade = await this.gradeService.createGrade(newGrade);
-    this.gId = savedGrade.gId;
+    this.savedId = savedGrade.gId;
   }
 }
