@@ -8,22 +8,22 @@
 
             <div class="input-group mb-3">
                 <span class="input-group-text">First Name</span>
-                <input type="text" id="first-name" placeholder="Tommy">
+                <input name="firstName" type="text" placeholder="Tommy" [(ngModel)] = "firstName">
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Last Name</span>
-                <input type="text" id="last-name" placeholder="Hudson">
+                <input name="lastName" type="text" placeholder="Hudson" [(ngModel)] = "lastName">
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Guardian Username</span>
-                <input type="text" id="guardian-username" placeholder="hudson1980">
+                <input name="guardianUsername" type="text" placeholder="hudson1980" [(ngModel)] = "guardianUsername">
             </div>
 
         </fieldset>
 
-        <button (click)="register()" class="btn btn-primary" type="submit">Submit</button>
+        <button  class="btn btn-primary" (click)="register()">Submit</button>
 
     </form>
 

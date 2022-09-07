@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Student } from 'src/app/models/student';
 import { StudentutilService } from 'src/app/services/studentutil.service';
 
@@ -10,7 +9,7 @@ import { StudentutilService } from 'src/app/services/studentutil.service';
 })
 export class StudentFormComponent implements OnInit {
 
-  constructor(private studentService:StudentutilService, private router:Router) { }
+  constructor(private studentService:StudentutilService) { }
 
   firstName:string = "";
   lastName:string = "";
@@ -24,7 +23,6 @@ export class StudentFormComponent implements OnInit {
     const student: Student = {id:0, firstName:this.firstName, lastName:this.lastName, guardianUsername:this.guardianUsername};
     const savedStudent: Student = await this.studentService.createStudent(student);
     this.savedId = savedStudent.id;
-    // this.router.navigateByUrl();
   }
 
 }
