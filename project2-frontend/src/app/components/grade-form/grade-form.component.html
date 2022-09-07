@@ -11,10 +11,8 @@
           <input
           name="firstName"
             id="student-name"
-            value="{{ firstName }}"
             type="text"
             disabled
-            [(ngModel)]="firstName"
           />
         </div>
 
@@ -32,6 +30,7 @@
               type="radio"
               name="RadioGrade"
               id="radioGood"
+
             />
             <label class="form-check-label" for="flexRadioGood">Good </label>
           </div>
@@ -42,6 +41,7 @@
               type="radio"
               name="RadioGrade"
               id="radioNaughty"
+              value="good"
             />
             <label class="form-check-label" for="flexRadioNaughty"
               >Naughty
@@ -68,8 +68,8 @@
           <input
             type="date"
             required="required"
-            [(ngModel)]="date"
-            name="date"
+            [(ngModel)] ="timeReported"
+            name="timeReported"
           />
         </div>
       </div>
@@ -86,8 +86,8 @@
           aria-label="With textarea"
           cols="10"
           rows="3"
-          [(ngModel)]="notes"
-          name="notes"
+          [(ngModel)]= "note"
+          name="note"
         ></textarea>
       </div>
 
