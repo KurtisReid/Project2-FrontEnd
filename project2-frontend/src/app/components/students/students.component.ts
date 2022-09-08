@@ -29,6 +29,6 @@ export class StudentsComponent implements OnInit {
 
   goToStudent(student:Student):void{
     this.studentTracker.setStudent(student);
-    this.router.navigateByUrl("/grades");
+    this.router.navigateByUrl("/grades-page");
   }
 }
