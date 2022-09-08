@@ -13,6 +13,7 @@ import { StudentFormComponent } from './components/student-form/student-form.com
 import { StudentsComponent } from './components/students/students.component';
 import { GradesPageComponent } from './components/grades-page/grades-page.component';
 import { StudentPageComponent } from './components/student-page/student-page.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { StudentPageComponent } from './components/student-page/student-page.com
     GradeFormComponent,
     GradesComponent,
     GradesPageComponent,
-    StudentPageComponent
+    StudentPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, 
