@@ -18,6 +18,11 @@ export class StudentsComponent implements OnInit {
   ngOnInit(): void {
     (async () => {
       this.students = await this.studentSevice.getAllStudents();
+      this.students = this.students.sort((s1,s2) => {
+        if(s1.lastName < s2.lastName) return -1
+        else if(s1.lastName > s2.lastName) return 1
+        else return 0
+      })
     })();
   }
 
