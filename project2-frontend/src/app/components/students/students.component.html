@@ -1,8 +1,10 @@
-<h3>Students</h3>
+<div class="col-md-4">
+    <h3>Students</h3>
 
-<table>
+
+<table class="table table-hover">
     <thead>
-        <tr>
+        <tr class="table-dark">
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -12,11 +14,12 @@
     </thead>
     <tbody>
         <tr *ngFor="let s of students">
-            <td routerLink="/grades">{{s.id}}</td>
-            <td routerLink="/grades">{{s.firstName}}</td>
-            <td routerLink="/grades">{{s.lastName}}</td>
-            <td routerLink="/grades">{{s.guardianUsername}}</td>
-            <td><button class="btn btn-danger" (click)="deleteStudent(s.id)">Delete</button></td>
+            <td routerLink="/grades" class="table-primary">{{s.id}}</td>
+            <td routerLink="/grades" class="table-secondary">{{s.firstName}}</td>
+            <td routerLink="/grades" class="table-success">{{s.lastName}}</td>
+            <td routerLink="/grades" class="table-info">{{s.guardianUsername}}</td>
+            <td><button class="btn btn-danger" (click)="deleteStudent(s.id)">Remove</button></td>
         </tr>
     </tbody>
 </table>
+</div>

@@ -9,11 +9,10 @@
         <div class="input-group mb-3">
           <span class="input-group-text">Name</span>
           <input
+          name="firstName"
             id="student-name"
-            value="{{ firstName }}"
             type="text"
             disabled
-            [(ngModel)]="firstName"
           />
         </div>
 
@@ -31,6 +30,7 @@
               type="radio"
               name="RadioGrade"
               id="radioGood"
+
             />
             <label class="form-check-label" for="flexRadioGood">Good </label>
           </div>
@@ -41,6 +41,7 @@
               type="radio"
               name="RadioGrade"
               id="radioNaughty"
+              value="good"
             />
             <label class="form-check-label" for="flexRadioNaughty"
               >Naughty
@@ -64,7 +65,12 @@
       <div class="input-group mb-3">
         <div class="input-group date">
           <span class="input-group-text">Date Posted</span>
-          <input type="date" required="required" [(ngModel)]="date" />
+          <input
+            type="date"
+            required="required"
+            [(ngModel)] ="timeReported"
+            name="timeReported"
+          />
         </div>
       </div>
 
@@ -80,7 +86,8 @@
           aria-label="With textarea"
           cols="10"
           rows="3"
-          [(ngModel)]="notes"
+          [(ngModel)]= "note"
+          name="note"
         ></textarea>
       </div>
 

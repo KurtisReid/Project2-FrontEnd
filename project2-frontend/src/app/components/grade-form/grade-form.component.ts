@@ -1,9 +1,9 @@
-import { StudentutilService } from './../../services/studentutil.service';
+
 import { Component, OnInit, Input } from '@angular/core';
 import { GradeutilService } from 'src/app/services/gradeutil.service';
 
 import { Grade } from 'src/app/models/grade';
-import { Student } from 'src/app/models/student';
+
 
 @Component({
   selector: 'app-grade-form',
@@ -11,45 +11,35 @@ import { Student } from 'src/app/models/student';
   styleUrls: ['./grade-form.component.css'],
 })
 export class GradeFormComponent implements OnInit {
-  // @Input() grades: Grade[] = [];
-  // @Input() students: Student = {
-  //   id: 0,
-  //   firstName: '',
-  //   lastName: '',
-  //   guardianUsername: '',
-  // };
 
   constructor(
-    private gradeService: GradeutilService,
-    private studentService: StudentutilService
+    private gradeService: GradeutilService
   ) {}
 
-  gId: number = 0;
-  firstName: string = 'Test Name';
-  grade: string = '';
-  date: number = 0;
-  notes: string = '';
+  studentId:number = 0;
+  timeReported:number = 0;
+  note:string = "";
+  behavior:string = "";
+  savedId:number = 0;
+  // grade: Grade = {
+  //   gId: 0,
+  //   studentId: 0,
+  //   timeReported: 0,
+  //   note: '',
+  //   behavior: '',
+  // };
 
-  ngOnInit(): void {
-    // async () => {
-    //   this.students = {
-    //     id: 1,
-    //     firstName: 'John',
-    //     lastName: 'Jacob',
-    //     guardianUsername: 'Astor',
-    //   };
-    // };
-  }
+  ngOnInit(): void {}
 
   async createNewGrade() {
     const newGrade: Grade = {
       gId: 0,
       studentId: 0,
-      timeReported: this.date,
-      note: this.notes,
-      behavior: this.grade,
+      timeReported: this.timeReported,
+      note: this.note,
+      behavior: this.behavior,
     };
     const savedGrade: Grade = await this.gradeService.createGrade(newGrade);
-    this.gId = savedGrade.gId;
+    this.savedId = savedGrade.gId;
   }
 }
