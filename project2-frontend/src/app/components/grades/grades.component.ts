@@ -12,7 +12,9 @@ import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 })
 export class GradesComponent implements OnInit {
 
-  constructor(private gradeService:GradeutilService, private studentService:StudentutilService, private studentTracker:StudenttrackerService) { }
+
+constructor(private gradeService:GradeutilService, private studentService:StudentutilService, private studentTracker:StudenttrackerService) { }
+
   grades:Grade[] = [];
   students:Student = {id : 0,firstName:"",lastName:"",guardianUsername:""}
   id:number = 1;
@@ -22,12 +24,10 @@ export class GradesComponent implements OnInit {
 
   ngOnInit(): void {
     (async () => {
-      this.students = await this.studentTracker.getStudent();
+      this.students = this.studentTracker.getStudent();
+      console.log(this.students);
       this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
-      //this.students = {id : 1,firstName:"John",lastName:"Jacob",guardianUsername:"Astor"}
-      //this.grades = [{gId: 1, studentId:1, timeReported:1220, note: "he is a monster", behavior:"EVIL"}, {gId: 2 , studentId:1, timeReported:1220, note: "he is petty baby", behavior:"EVIL"}];
-    })();
-
+      })();
 
   }
 
