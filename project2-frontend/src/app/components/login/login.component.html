@@ -1,9 +1,9 @@
 <label for="">Username</label>
-<input id="usernameInput" type="text" placeholder="Username" [(ngModel)]= "username">
+<input id="usernameInput" type="text" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Username" [(ngModel)]= "username">
 
 <label for="">Password</label>
-<input id="passwordInput" type="text" placeholder="Password" [(ngModel)]= "password">
+<input id="passwordInput" type="text" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password" [(ngModel)]= "password">
 
-<button id="loginBtn" (click)="registerLogin()">Login</button>
+<button id="loginBtn" class="btn btn-primary" (click)="registerLogin()">Login</button>
 
 
