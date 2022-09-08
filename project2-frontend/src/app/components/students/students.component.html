@@ -1,22 +1,24 @@
-<h3>Students</h3>
+<div class="col-md-4">
+    <h3>Students</h3>
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Guardian Username</th>
-            <th>Remove Student</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let s of students">
-            <td>{{s.id}}</td>
-            <td>{{s.firstName}}</td>
-            <td>{{s.lastName}}</td>
-            <td>{{s.guardianUsername}}</td>
-            <td><button>Remove</button></td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Guardian Username</th>
+                <th>Remove Student</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of students">
+                <td class="table-primary">{{s.id}}</td>
+                <td class="table-secondary">{{s.firstName}}</td>
+                <td class="table-success">{{s.lastName}}</td>
+                <td class="table-info">{{s.guardianUsername}}</td>
+                <td><button class="btn btn-danger">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
