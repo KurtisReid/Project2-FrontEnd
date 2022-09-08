@@ -64,11 +64,7 @@ export class GradeFormComponent implements OnInit {
     console.log(savedGrade.studentId);
     alert(this.students.firstName + `'s grade has been saved!`);
 
-    
-    this.studentTracker.setStudent(this.students);
-    
-
-    this.router.navigateByUrl(`/grades`);
+    location.reload();
 
     // timeReported = 0;
     // note = '';

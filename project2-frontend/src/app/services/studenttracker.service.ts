@@ -14,7 +14,6 @@ export class StudenttrackerService {
   ngOnInit(): void{ 
     const currentStudent = localStorage.getItem('currentStudent');
     if(currentStudent != null){
-      console.log("init is on refresh");
       this.currentStudent = JSON.parse(currentStudent);
     }
   }
