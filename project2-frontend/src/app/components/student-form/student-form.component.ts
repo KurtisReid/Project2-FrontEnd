@@ -26,6 +26,7 @@ export class StudentFormComponent implements OnInit {
     const savedStudent: Student = await this.studentService.createStudent(student);
     console.log(savedStudent);
     this.savedId = savedStudent.id;
+    location.reload();
   }
 
 }
