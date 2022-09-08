@@ -7,6 +7,8 @@ import { Grade } from 'src/app/models/grade';
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { HttpStatusCode, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 
 @Component({
   selector: 'app-grade-form',
@@ -20,10 +22,12 @@ export class GradeFormComponent implements OnInit {
   constructor(
     private gradeService: GradeutilService,
     private studentService: StudentutilService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private studentTracker: StudenttrackerService
   ) {}
 
-  studentId: number = 0; //This needs to be changed to grab Id from url
+  students:Student = {id : 0,firstName:"",lastName:"",guardianUsername:""}
   firstName: string = 'John McClain';
   // firstName: this.studentService.
   timeReported: number = 0;
@@ -35,8 +39,9 @@ export class GradeFormComponent implements OnInit {
     this.gradesFormGroup = this.fb.group({
       gradesRadio: this.gradesRadio,
     });
-    //I think we need to get studentId in here
-    this.studentId;
+    this.students = this.studentTracker.getStudent();
+    console.log(this.students.id);
+    
   }
 
   async createNewGrade() {
@@ -45,7 +50,7 @@ export class GradeFormComponent implements OnInit {
 
     const newGrade: Grade = {
       gId: 0,
-      studentId: this.studentId,
+      studentId: this.students.id,
       timeReported: Date.now() / 1000,
       note: this.note,
       behavior: radioGrade,
@@ -56,8 +61,14 @@ export class GradeFormComponent implements OnInit {
     console.log('Saved timeReported: ' + this.timeReported);
     console.log('Saved note: ' + this.note);
     console.log('Saved radio grade: ' + radioGrade);
+    console.log(savedGrade.studentId);
+    alert(this.students.firstName + `'s grade has been saved!`);
+
     
-    alert(this.firstName + `'s grade has been saved!`);
+    this.studentTracker.setStudent(this.students);
+    
+
+    this.router.navigateByUrl(`/grades`);
 
     // timeReported = 0;
     // note = '';
