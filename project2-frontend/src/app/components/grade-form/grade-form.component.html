@@ -1,17 +1,19 @@
 <div class="container">
   <div class="col-md-4 offset-md-6">
-    <form action="" method="post">
+    <form [formGroup]="gradesFormGroup">
       <fieldset>
         <legend>Add a grade</legend>
 
         <!-- Name -->
 
         <div class="input-group mb-3">
-          <span class="input-group-text">Name</span>
+          <span class="input-group-text">Student Name</span>
           <input
-          name="firstName"
+            name="firstName"
             id="student-name"
             type="text"
+            [(ngModel)]="firstName"
+            [ngModelOptions]="{ standalone: true }"
             disabled
           />
         </div>
@@ -25,35 +27,57 @@
           <!-- If targeted radio button is selected, take value and set = to behavior/(aka grade) 
           ie. *ngIf="" -->
           <div class="form-check">
-            <input
+            <!-- <input
               class="form-check-input"
               type="radio"
               name="RadioGrade"
               id="radioGood"
-
+              value="GOOD"
+            /> -->
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="gradesRadio"
+              id="radioGood"
+              value="GOOD"
             />
             <label class="form-check-label" for="flexRadioGood">Good </label>
           </div>
 
           <div class="form-check">
-            <input
+            <!-- <input
               class="form-check-input"
               type="radio"
               name="RadioGrade"
               id="radioNaughty"
-              value="good"
+              value="NAUGHTY"
+            /> -->
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="gradesRadio"
+              id="radioBad"
+              value="BAD"
             />
-            <label class="form-check-label" for="flexRadioNaughty"
-              >Naughty
+            <label class="form-check-label" for="flexRadioBad"
+              >Bad
             </label>
           </div>
 
           <div class="form-check">
-            <input
+            <!-- <input
+              id="radioEvil"
               class="form-check-input"
               type="radio"
               name="RadioGrade"
+              value="EVIL"
+            /> -->
+            <input
               id="radioEvil"
+              class="form-check-input"
+              type="radio"
+              formControlName="gradesRadio"
+              value="EVIL"
             />
             <label class="form-check-label" for="flexRadioEvil">Evil </label>
           </div>
@@ -66,11 +90,17 @@
         <div class="input-group date">
           <span class="input-group-text">Date Posted</span>
           <input
+            name="timeReported"
             type="date"
             required="required"
-            [(ngModel)] ="timeReported"
-            name="timeReported"
+            [(ngModel)]="timeReported"
+            [ngModelOptions]="{ standalone: true }"
           />
+          <!-- <input
+            formControlName="timeReported"
+            type="date"
+            required="required"
+          /> -->
         </div>
       </div>
 
@@ -81,19 +111,19 @@
         <textarea
           name="gradeNotes"
           id="gradeNotes"
-          placeholder=""
           class="form-control"
+          name="note"
+          placeholder=""
           aria-label="With textarea"
           cols="10"
           rows="3"
-          [(ngModel)]= "note"
-          name="note"
+          [(ngModel)]="note"
+          [ngModelOptions]="{ standalone: true }"
         ></textarea>
       </div>
 
-      <button class="btn btn-primary" type="submit" (click)="createNewGrade()">
-        Submit
-      </button>
+      <button class="btn btn-primary" (click)="createNewGrade()">Submit</button>
+      <div>{{ gradesRadio.value }}</div>
     </form>
   </div>
 </div>

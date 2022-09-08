@@ -12,7 +12,9 @@ import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 })
 export class GradesComponent implements OnInit {
 
-  constructor(private studentTracker:StudenttrackerService, private gradeService:GradeutilService, private studentService:StudentutilService) { }
+
+constructor(private gradeService:GradeutilService, private studentService:StudentutilService, private studentTracker:StudenttrackerService) { }
+
   grades:Grade[] = [];
   students:Student = {id : 0,firstName:"",lastName:"",guardianUsername:""}
   id:number = 1;
@@ -26,6 +28,7 @@ export class GradesComponent implements OnInit {
       console.log(this.students);
       this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
       })();
+
   }
 
   async deleteGrade(gIds:number)
