@@ -12,11 +12,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let s of students">
-            <td>{{s.id}}</td>
-            <td>{{s.firstName}}</td>
-            <td>{{s.lastName}}</td>
-            <td>{{s.guardianUsername}}</td>
-            <td><button>Remove</button></td>
+            <td routerLink="/grades">{{s.id}}</td>
+            <td routerLink="/grades">{{s.firstName}}</td>
+            <td routerLink="/grades">{{s.lastName}}</td>
+            <td routerLink="/grades">{{s.guardianUsername}}</td>
+            <td><button class="btn btn-danger" (click)="deleteStudent(s.id)">Delete</button></td>
         </tr>
     </tbody>
 </table>
