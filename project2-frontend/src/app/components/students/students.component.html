@@ -14,10 +14,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let s of students">
-            <td routerLink="/grades" class="table-primary">{{s.id}}</td>
-            <td routerLink="/grades" class="table-secondary">{{s.firstName}}</td>
-            <td routerLink="/grades" class="table-success">{{s.lastName}}</td>
-            <td routerLink="/grades" class="table-info">{{s.guardianUsername}}</td>
+            <td (click)="goToStudent(s)" class="table-primary">{{s.id}}</td>
+            <td (click)="goToStudent(s)" class="table-secondary">{{s.firstName}}</td>
+            <td (click)="goToStudent(s)" class="table-success">{{s.lastName}}</td>
+            <td (click)="goToStudent(s)" class="table-info">{{s.guardianUsername}}</td>
             <td><button class="btn btn-danger" (click)="deleteStudent(s.id)">Remove</button></td>
         </tr>
     </tbody>

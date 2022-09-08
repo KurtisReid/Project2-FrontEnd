@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/models/student';
 import { StudentutilService } from 'src/app/services/studentutil.service';
 import { Router } from '@angular/router';
+import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 
 @Component({
   selector: 'app-students',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor(private router:Router, private studentSevice:StudentutilService) { }
+  constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService) { }
 
   students:Student[] = [];
 
@@ -26,5 +27,10 @@ export class StudentsComponent implements OnInit {
     const deleted = await this.studentSevice.terminateStudent(stringId);
     console.log(deleted);
     this.students = await this.studentSevice.getAllStudents();
+  }
+
+  goToStudent(student:Student):void{
+    this.studentTracker.setStudent(student);
+    this.router.navigateByUrl("/grades");
   }
 }
