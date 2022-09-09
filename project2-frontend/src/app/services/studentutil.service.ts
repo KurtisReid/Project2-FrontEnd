@@ -27,6 +27,11 @@ export class StudentutilService {
     const savedStudent = await firstValueFrom(observable);
     return savedStudent;
   }
+  async getStudentsByGuardian(guardian:string):Promise<Student[]>{
+    const observable = this.http.get<Student[]>("http://localhost:8080/students/byGuardian/" + guardian);
+    const savedStudent = await firstValueFrom(observable);
+    return savedStudent;
+  }
 
   async getAllStudents():Promise<Student[]>{
     const observable = this.http.get<Student[]>("http://localhost:8080/students/");

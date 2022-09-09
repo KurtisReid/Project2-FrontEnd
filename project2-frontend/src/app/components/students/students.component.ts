@@ -17,7 +17,16 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {
     (async () => {
-      this.students = await this.studentSevice.getAllStudents();
+      const role = localStorage.getItem("role");
+      if(role === "teacher"){
+        this.students = await this.studentSevice.getAllStudents();
+      }else if(role === "guardian"){
+        const username = localStorage.getItem("username");
+        if(username != null){
+          this.students = await this.studentSevice.getStudentsByGuardian(username);
+        }
+      }
+
       this.students = this.students.sort((s1,s2) => {
         if(s1.lastName < s2.lastName) return -1
         else if(s1.lastName > s2.lastName) return 1
