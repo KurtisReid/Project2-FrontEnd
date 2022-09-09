@@ -22,7 +22,7 @@ export class StudentutilService {
     return savedStudent;
   }
 
-  async getStudentByName(name:String):Promise<Student>{
+  async getStudentByName(name:string):Promise<Student>{
     const observable = this.http.get<Student>("http://localhost:8080/students/" + name);
     const savedStudent = await firstValueFrom(observable);
     return savedStudent;
@@ -34,8 +34,8 @@ export class StudentutilService {
     return savedStudent;
   }
 
-  async terminateStudent(id:String):Promise<String>{
-    const observable = this.http.delete<String>("http://localhost:8080/students/" + id);
+  async terminateStudent(id:string):Promise<string>{
+    const observable = this.http.delete<string>("http://localhost:8080/students/" + id);
 
     //const deleted = await firstValueFrom(observable);
     //return deleted;
