@@ -27,7 +27,9 @@ export class StudentsComponent implements OnInit {
         this.students = await this.studentSevice.getAllStudents();
         this.enableBtn = true;
       }else if(role === `:"guardian"`){
+        console.log("Gardians rule");
         const username = localStorage.getItem("username");
+        console.log(username);
         this.enableBtn = false;
         if(username != null){
           this.students = await this.studentSevice.getStudentsByGuardian(username);
