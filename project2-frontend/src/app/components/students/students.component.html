@@ -8,7 +8,7 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Guardian Username</th>
-      <th>Remove Student</th>
+      <th *ngIf="enableBtn">Remove Student</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
         {{ s.guardianUsername }}
       </td>
       <td>
-        <button class="btn btn-danger" (click)="deleteStudent(s.id)">
+        <button class="btn btn-danger" (click)="deleteStudent(s.id)" *ngIf="enableBtn">
           Remove
         </button>
       </td>
