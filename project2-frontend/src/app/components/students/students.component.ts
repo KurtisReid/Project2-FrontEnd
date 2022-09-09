@@ -3,6 +3,7 @@ import { Student } from 'src/app/models/student';
 import { StudentutilService } from 'src/app/services/studentutil.service';
 import { Router } from '@angular/router';
 import { StudenttrackerService } from 'src/app/services/studenttracker.service';
+import { LoginutilService } from 'src/app/services/loginutil.service';
 
 @Component({
   selector: 'app-students',
@@ -11,13 +12,25 @@ import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService) { }
+  constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService, private loginService:LoginutilService) { }
 
   students:Student[] = [];
+  enableBtn:boolean = false;
 
   ngOnInit(): void {
     (async () => {
-      this.students = await this.studentSevice.getAllStudents();
+      const role = localStorage.getItem("role");
+      if(role === "teacher"){
+        this.students = await this.studentSevice.getAllStudents();
+        this.enableBtn = true;
+      }else if(role === "guardian"){
+        const username = localStorage.getItem("username");
+        this.enableBtn = false;
+        if(username != null){
+          this.students = await this.studentSevice.getStudentsByGuardian(username);
+        }
+      }
+
       this.students = this.students.sort((s1,s2) => {
         if(s1.lastName < s2.lastName) return -1
         else if(s1.lastName > s2.lastName) return 1

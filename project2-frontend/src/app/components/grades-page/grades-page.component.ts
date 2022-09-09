@@ -9,6 +9,7 @@ import { StudenttrackerService } from 'src/app/services/studenttracker.service';
   styleUrls: ['./grades-page.component.css'],
 })
 export class GradesPageComponent implements OnInit {
+
   constructor(private studentTracker: StudenttrackerService) {}
 
   students: Student = {
@@ -17,18 +18,17 @@ export class GradesPageComponent implements OnInit {
     lastName: '',
     guardianUsername: '',
   };
-  // grades: Grade[] = [];
-  // students: Student = {
-  //   id: 0,
-  //   firstName: '',
-  //   lastName: '',
-  //   guardianUsername: '',
-  // };
-  // id: number = 1;
-  // gIds: number = 0;
-  // retStr: string = 'hello';
 
-  ngOnInit(): void {
-    this.students = this.studentTracker.getStudent();
+  enableGradeForm:boolean = true;
+
+  ngOnInit(): void { 
+   this.students = this.studentTracker.getStudent();
+    const savedRole = localStorage.getItem("role");
+    if(savedRole === "teacher"){
+      this.enableGradeForm = true;
+    }else{
+      this.enableGradeForm = false;
+    }
+
   }
 }

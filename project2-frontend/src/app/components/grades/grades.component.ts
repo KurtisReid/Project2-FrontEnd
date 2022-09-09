@@ -20,6 +20,7 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
   id:number = 1;
   gIds:number = 0;
   retStr:string = "hello";
+  enableBtn:boolean = false;
 
 
   ngOnInit(): void {
@@ -27,7 +28,15 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
       this.students = this.studentTracker.getStudent();
       console.log(this.students);
       this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
-      })();
+      
+      const role = localStorage.getItem("role");
+      if(role === "teacher"){
+        this.enableBtn = true;
+      }else if(role === "guardian"){
+        this.enableBtn = false;
+      }
+      
+    })();
 
   }
 
