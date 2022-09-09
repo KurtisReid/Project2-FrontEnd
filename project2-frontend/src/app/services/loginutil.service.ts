@@ -11,8 +11,8 @@ export class LoginutilService {
   constructor(private http: HttpClient) { }
 
 
-  async sendLoginCredentials(login:Login):Promise<String>{
-    const observable = this.http.post<String>("http://localhost:8080/login", login);
+  async sendLoginCredentials(login:Login):Promise<string>{
+    const observable = this.http.post<string>("http://localhost:8080/login", login);
     //console.log(observable);
 
 
