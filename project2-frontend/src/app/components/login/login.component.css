@@ -1,0 +1,16 @@
+#login-h2 {
+  padding-bottom: 1em;
+}
+
+.login-box {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: rgba(250, 235, 215, 0.9);
+  width: 30%;
+  align-items: center;
+  padding: 2rem;
+
+  border-style: solid;
+}
