@@ -10,7 +10,7 @@ import { LoginutilService } from 'src/app/services/loginutil.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService:LoginutilService) { }
+  constructor(private loginService:LoginutilService, private router: Router) { }
   username:string = "";
   password:string = "";
   savedJwt: string = "";
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   {
     console.log("registerLogin");
     const login: Login = {username:this.username, password:this.password}
-    const jwt: String = await this.loginService.sendLoginCredentials(login);
+    const jwt: string = await this.loginService.sendLoginCredentials(login);
     console.log("i got it");
     console.log(jwt);
     this.savedJwt = jwt;
