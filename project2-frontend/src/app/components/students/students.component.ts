@@ -27,7 +27,7 @@ export class StudentsComponent implements OnInit {
   }
 
   async deleteStudent(id:number){
-    const stringId:String = id.toString(); 
+    const stringId:string = id.toString(); 
     const deleted = await this.studentSevice.terminateStudent(stringId);
     this.students = await this.studentSevice.getAllStudents();
   }
