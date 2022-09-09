@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginutilService } from 'src/app/services/loginutil.service';
 
 @Component({
   selector: 'app-student-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService:LoginutilService) { }
+
+  enableForm:boolean = true;
 
   ngOnInit(): void {
+    const savedRole = localStorage.getItem("role");
+    if(savedRole === "teacher"){
+      this.enableForm = true;
+    }else{
+      this.enableForm = false;
+    }
   }
 
 }

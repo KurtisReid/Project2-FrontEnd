@@ -40,6 +40,8 @@ getJWT(jwt:string):string
       var errStr = JSON.stringify(error);
       var strarr = errStr.split("text");
       var jwtstrarr = strarr[1].split("}");
+      //console.log("jwtstrarr " + jwtstrarr[0]);
+
       const newstr = jwtstrarr[0].substring(1);
       console.log("newstr why dont you see me" + newstr);
 
@@ -48,6 +50,7 @@ getJWT(jwt:string):string
     
     return "it isnt sucessful";
   }
+
 
   async sendLoginCredentials(login:Login):Promise<string>{
     const observable = this.http.post<string>("http://localhost:8080/login", login);

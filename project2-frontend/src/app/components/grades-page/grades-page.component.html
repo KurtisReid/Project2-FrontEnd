@@ -4,7 +4,7 @@
       <app-grades></app-grades>
     </div>
     <div class="col-md-4">
-      <app-grade-form></app-grade-form>
+      <app-grade-form *ngIf="enableGradeForm"></app-grade-form>
     </div>
   </div>
 </div>
