@@ -12,6 +12,7 @@
         placeholder="Username"
         class="form-control"
         [(ngModel)]="username"
+        [ngModelOptions]="{ standalone: true }"
       />
     </div>
 
@@ -24,6 +25,7 @@
         for="exampleInputPassword1"
         class="form-control"
         [(ngModel)]="password"
+        [ngModelOptions]="{ standalone: true }"
       />
     </div>
 
