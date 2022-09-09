@@ -18,12 +18,15 @@ export class StudentsComponent implements OnInit {
   enableBtn:boolean = false;
 
   ngOnInit(): void {
+
     (async () => {
       const role = localStorage.getItem("role");
-      if(role === "teacher"){
+      console.log("hello" + role);
+      if(role === `:"teacher"`){
+        console.log("hello you are inside teacher role");
         this.students = await this.studentSevice.getAllStudents();
         this.enableBtn = true;
-      }else if(role === "guardian"){
+      }else if(role === `:"guardian"`){
         const username = localStorage.getItem("username");
         this.enableBtn = false;
         if(username != null){

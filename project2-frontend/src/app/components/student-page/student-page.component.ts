@@ -14,7 +14,7 @@ export class StudentPageComponent implements OnInit {
 
   ngOnInit(): void {
     const savedRole = localStorage.getItem("role");
-    if(savedRole === "teacher"){
+    if(savedRole === `:"teacher"`){
       this.enableForm = true;
     }else{
       this.enableForm = false;
