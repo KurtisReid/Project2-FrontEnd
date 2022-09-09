@@ -21,8 +21,8 @@
       <td (click)="goToStudent(s)" class="table-info">
         {{ s.guardianUsername }}
       </td>
-      <td>
-        <button class="btn btn-danger" (click)="deleteStudent(s.id)" *ngIf="enableBtn">
+      <td *ngIf="enableBtn">
+        <button class="btn btn-danger" (click)="deleteStudent(s.id)">
           Remove
         </button>
       </td>

@@ -17,6 +17,8 @@ getJWT(jwt:string):string
 
   constructor(private http: HttpClient) { }
 
+  baseUrl:string = "http://localhost:8080";
+
   async getRole(sendjwt:string):Promise<string>
   {
     const httpOptions = 
@@ -27,7 +29,7 @@ getJWT(jwt:string):string
       })
     }
     
-    const observable = this.http.get<string>("http://localhost:8080/role", httpOptions);
+    const observable = this.http.get<string>(this.baseUrl + "/role", httpOptions);
     try{
       console.log("getRole");
       const jwt = await firstValueFrom(observable);
@@ -53,7 +55,7 @@ getJWT(jwt:string):string
 
 
   async sendLoginCredentials(login:Login):Promise<string>{
-    const observable = this.http.post<string>("http://localhost:8080/login", login);
+    const observable = this.http.post<string>(this.baseUrl + "/login", login);
     //console.log(observable);
 
 
