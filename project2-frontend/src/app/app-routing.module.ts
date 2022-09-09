@@ -4,11 +4,12 @@ import { StudentPageComponent } from './components/student-page/student-page.com
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const routes: Routes = [
   { path: 'grades-page', component: GradesPageComponent },
   { path: 'students-page', component: StudentPageComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginPageComponent },
 ];
 
 @NgModule({

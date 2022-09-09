@@ -24,7 +24,7 @@ export class GradesPageComponent implements OnInit {
   ngOnInit(): void { 
    this.students = this.studentTracker.getStudent();
     const savedRole = localStorage.getItem("role");
-    if(savedRole === "teacher"){
+    if(savedRole === `:"teacher"`){
       this.enableGradeForm = true;
     }else{
       this.enableGradeForm = false;
