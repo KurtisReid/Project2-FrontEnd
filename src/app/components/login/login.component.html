@@ -1,0 +1,38 @@
+<div class="container login-box">
+  <div class="text-center">
+    <h2 id="login-h2">Welcome!</h2>
+    <p>Please Login</p>
+  </div>
+  <form>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Username</span>
+      <input
+        id="usernameInput"
+        type="text"
+        placeholder="Username"
+        class="form-control"
+        [(ngModel)]="username"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Password</span>
+      <input
+        id="passwordInput"
+        type="text"
+        placeholder="Password"
+        for="exampleInputPassword1"
+        class="form-control"
+        [(ngModel)]="password"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="text-center">
+      <button id="loginBtn" class="btn btn-primary" (click)="registerLogin()">
+        Login
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="row page-header">
+  <h2 *ngIf="students.id !== 0">
+    {{ students.firstName }} {{ students.lastName }}'s grades
+  </h2>
+</div>
+
+<div class="container">
+
+  <div class="table-form-container">
+    <div class="row">
+      <div class="col-md-8">
+        <app-grades></app-grades>
+      </div>
+      <div class="col-md-4">
+        <app-grade-form *ngIf="enableGradeForm"></app-grade-form>
+      </div>
+    </div>
+  </div>
+</div>

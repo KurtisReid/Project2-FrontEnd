@@ -1,0 +1,24 @@
+
+<table class="table table-hover">
+
+  <thead>
+    <tr class="table-dark">
+      <th>ID</th>
+      <th>Time</th>
+      <th>Grade</th>
+      <th>Notes</th>
+      <th *ngIf="enableBtn"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let g of grades">
+      <th scope="row" class="table-primary">{{ g.gId }}</th>
+      <td class="table-secondary">{{ g.timeReported }}</td>
+      <td class="table-success">{{ g.behavior }}</td>
+      <td class="table-info">{{ g.note }}</td>
+      <td *ngIf="enableBtn"><button class="btn btn-danger" (click)="deleteGrade(g.gId)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
