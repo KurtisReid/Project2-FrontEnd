@@ -2,14 +2,21 @@ import { Component, OnInit } from '@angular/core';
 
 import { Grade } from 'src/app/models/grade';
 import { Student } from 'src/app/models/student';
+import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 @Component({
   selector: 'app-grades-page',
   templateUrl: './grades-page.component.html',
   styleUrls: ['./grades-page.component.css'],
 })
 export class GradesPageComponent implements OnInit {
-  constructor() {}
-  
+  constructor(private studentTracker: StudenttrackerService) {}
+
+  students: Student = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    guardianUsername: '',
+  };
   // grades: Grade[] = [];
   // students: Student = {
   //   id: 0,
@@ -21,5 +28,7 @@ export class GradesPageComponent implements OnInit {
   // gIds: number = 0;
   // retStr: string = 'hello';
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    this.students = this.studentTracker.getStudent();
+  }
 }

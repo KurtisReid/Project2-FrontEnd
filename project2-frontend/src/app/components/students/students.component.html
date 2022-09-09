@@ -1,5 +1,5 @@
 <!-- <div class="col-md-4"> -->
-<h3>Student Roster</h3>
+<!-- <h2 class="page-header">Student Roster</h2> -->
 
 <table class="table table-hover">
   <thead>
@@ -13,7 +13,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let s of students">
-      <td (click)="goToStudent(s)" class="table-primary">{{ s.id }}</td>
+      <th scope="row" (click)="goToStudent(s)" class="table-primary">
+        {{ s.id }}
+      </th>
       <td (click)="goToStudent(s)" class="table-secondary">
         {{ s.firstName }}
       </td>
