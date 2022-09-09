@@ -15,14 +15,17 @@ export class StudentsComponent implements OnInit {
   constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService, private loginService:LoginutilService) { }
 
   students:Student[] = [];
+  enableBtn:boolean = false;
 
   ngOnInit(): void {
     (async () => {
       const role = localStorage.getItem("role");
       if(role === "teacher"){
         this.students = await this.studentSevice.getAllStudents();
+        this.enableBtn = true;
       }else if(role === "guardian"){
         const username = localStorage.getItem("username");
+        this.enableBtn = false;
         if(username != null){
           this.students = await this.studentSevice.getStudentsByGuardian(username);
         }

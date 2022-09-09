@@ -11,7 +11,7 @@
             <th>Time</th>
             <th>Grade</th>
             <th>Notes</th>
-            <th>Action button</th>
+            <th *ngIf="enableBtn">Action button</th>
         </tr>
 
 
@@ -23,7 +23,7 @@
             <td class="table-secondary">{{g.timeReported}}</td>
             <td class="table-success">{{g.behavior}}</td>
             <td class="table-info">{{g.note}}</td>
-            <td><button class="btn btn-danger" (click)="deleteGrade(g.gId)">delete</button></td>
+            <td><button class="btn btn-danger" (click)="deleteGrade(g.gId)" *ngIf="enableBtn">delete</button></td>
         </tr>
 
     </tbody>
