@@ -19,13 +19,7 @@ getJWT(jwt:string):string
 
   async getRole(sendjwt:string):Promise<string>
   {
-    try{
-      
-      
-    } catch (error)
-    {
-      console.log(error);
-    }
+
 
         const httpOptions = 
         {
@@ -43,22 +37,22 @@ getJWT(jwt:string):string
     try{
       console.log("getRole");
       const jwt = await firstValueFrom(observable);
-      console.log("Sucess ");
+      //console.log("Sucess ");
       return jwt;
 
     } catch (error)
     {
       
-      console.log(JSON.stringify(error));
+      //console.log(JSON.stringify(error));
       var errStr = JSON.stringify(error);
       var strarr = errStr.split("text");
-      console.log("Str " + strarr[0]);
+      //console.log("Str " + strarr[0]);
 
       var jwtstrarr = strarr[1].split("}");
-      console.log("jwtstrarr " + jwtstrarr[0]);
+      //console.log("jwtstrarr " + jwtstrarr[0]);
 
       const newstr = jwtstrarr[0].substring(1);
-      console.log("newstr why dont you see me" + newstr);
+      //console.log("newstr why dont you see me" + newstr);
 
 
       return newstr;
@@ -78,23 +72,23 @@ getJWT(jwt:string):string
 
 
     try{
-      console.log("trying");
+      //console.log("trying");
       const jwt = await firstValueFrom(observable);
-      console.log("Sucess ");
+      //console.log("Sucess ");
       return jwt;
 
     } catch (error)
     {
       
-      console.log(JSON.stringify(error));
+      //console.log(JSON.stringify(error));
       var errStr = JSON.stringify(error);
       var strarr = errStr.split("text");
-      console.log("Str " + strarr[1]);
+      //console.log("Str " + strarr[1]);
 
       var jwtstrarr = strarr[1].split("}");
-      console.log("jwtstrarr " + jwtstrarr[0]);
+      //console.log("jwtstrarr " + jwtstrarr[0]);
       const newstr = jwtstrarr[0].substring(3);
-      console.log("newstr why dont you see me " + newstr.slice(0, -1));
+      //console.log("newstr why dont you see me " + newstr.slice(0, -1));
 
       return newstr.slice(0, -1);
       //const newjwt = error.text;
