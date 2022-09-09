@@ -1,42 +1,41 @@
 <!-- <div class="container"> -->
+<div class="form">
+  <form action="" method="post">
+    <h4>Add a Student</h4>
+    <fieldset>
+      <!-- <legend>Add a student</legend> -->
 
-<form action="" method="post">
-  <h4>Add a Student</h4>
-  <fieldset>
-    <!-- <legend>Add a student</legend> -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">First Name</span>
+        <input
+          name="firstName"
+          type="text"
+          placeholder="Tommy"
+          [(ngModel)]="firstName"
+        />
+      </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text">First Name</span>
-      <input
-        name="firstName"
-        type="text"
-        placeholder="Tommy"
-        [(ngModel)]="firstName"
-      />
-    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Last Name</span>
+        <input
+          name="lastName"
+          type="text"
+          placeholder="Hudson"
+          [(ngModel)]="lastName"
+        />
+      </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text">Last Name</span>
-      <input
-        name="lastName"
-        type="text"
-        placeholder="Hudson"
-        [(ngModel)]="lastName"
-      />
-    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Guardian Username</span>
+        <input
+          name="guardianUsername"
+          type="text"
+          placeholder="hudson1980"
+          [(ngModel)]="guardianUsername"
+        />
+      </div>
+    </fieldset>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text">Guardian Username</span>
-      <input
-        name="guardianUsername"
-        type="text"
-        placeholder="hudson1980"
-        [(ngModel)]="guardianUsername"
-      />
-    </div>
-  </fieldset>
-
-  <button class="btn btn-primary" (click)="register()">Submit</button>
-</form>
-
-<!-- </div> -->
+    <button class="btn btn-primary" (click)="register()">Submit</button>
+  </form>
+</div>

@@ -4,7 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import { Login } from '../models/login';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 
@@ -71,11 +71,11 @@ getJWT(jwt:string):string
       const newstr = jwtstrarr[0].substring(3);
       return newstr.slice(0, -1);
     }
-    
+
     //console.log(jwt);
-    return "it isnt sucessful";
-    
+    return 'it isnt sucessful';
   }
 
 
 }
+
