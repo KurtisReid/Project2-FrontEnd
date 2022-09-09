@@ -9,17 +9,15 @@ import { Student } from 'src/app/models/student';
 })
 export class GradesPageComponent implements OnInit {
   constructor() {}
-  
-  // grades: Grade[] = [];
-  // students: Student = {
-  //   id: 0,
-  //   firstName: '',
-  //   lastName: '',
-  //   guardianUsername: '',
-  // };
-  // id: number = 1;
-  // gIds: number = 0;
-  // retStr: string = 'hello';
 
-  ngOnInit(): void {  }
+  enableGradeForm:boolean = true;
+
+  ngOnInit(): void { 
+    const savedRole = localStorage.getItem("role");
+    if(savedRole === "teacher"){
+      this.enableGradeForm = true;
+    }else{
+      this.enableGradeForm = false;
+    }
+  }
 }
