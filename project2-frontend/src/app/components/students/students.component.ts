@@ -3,6 +3,7 @@ import { Student } from 'src/app/models/student';
 import { StudentutilService } from 'src/app/services/studentutil.service';
 import { Router } from '@angular/router';
 import { StudenttrackerService } from 'src/app/services/studenttracker.service';
+import { LoginutilService } from 'src/app/services/loginutil.service';
 
 @Component({
   selector: 'app-students',
@@ -11,7 +12,7 @@ import { StudenttrackerService } from 'src/app/services/studenttracker.service';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService) { }
+  constructor(private studentTracker:StudenttrackerService,  private router:Router, private studentSevice:StudentutilService, private loginService:LoginutilService) { }
 
   students:Student[] = [];
 
