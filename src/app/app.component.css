@@ -1,0 +1,17 @@
+
+
+.content{
+
+  padding: 22% 50%;
+  position: relative;
+  overflow-y: auto;
+}
+
+.footer{
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #eee;
+  padding: 3px 15px;
+}
+
+

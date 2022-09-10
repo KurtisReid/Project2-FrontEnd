@@ -24,9 +24,10 @@
             >Temp Grade Page</a
           >
         </li>
-        <input id="studentNameInput" type="text" placeholder="Search for student by first name" class="form-control" [(ngModel)]= "enteredName">
-        <button id="searchBtn" class="btn btn-primary" (click)="getStudent(enteredName)">Search</button>
-        
+        <form class="d-flex">
+        <input id="studentNameInput" type="search" placeholder="Search for student by first name" class="form-control me-2" [(ngModel)]= "enteredName" aria-label="Search">
+        <button id="searchBtn" type="submit" class="btn btn-outline-success" (click)="getStudent(enteredName)">Search</button>
+      </form>
       </ul>
     </div>
   </div>
