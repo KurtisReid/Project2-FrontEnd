@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  background: url(../src/assets/images/loginbackground.jpg);
+  /* background-position: center; */
+  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 h2 {
@@ -49,3 +54,4 @@ table {
 #radioGradeGroup {
   padding-left: 2em;
 }
+
