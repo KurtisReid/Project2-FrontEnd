@@ -18,10 +18,14 @@ export class NavBarComponent implements OnInit {
   enteredName: string = ""
   async getStudent(enteredName:string)
   {
-    const searchedStudent: Student[] = await this.studentService.getStudentByName(this.enteredName);
-    console.log(searchedStudent);
-    localStorage.setItem("students", searchedStudent.toString());
-    this.router.navigateByUrl("/students-page");
+    if(enteredName.length > 0){
+      const checkedName = enteredName[0].toUpperCase() + enteredName.substring(1);
+      localStorage.setItem("searchName", checkedName);
+    }else{
+      localStorage.setItem("searchName", enteredName);
+    }
+    
+    location.reload();
   }
   
   
