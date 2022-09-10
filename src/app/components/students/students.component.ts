@@ -22,8 +22,6 @@ export class StudentsComponent implements OnInit {
     (async () => {
       const role = localStorage.getItem("role");
       const searchedStudent = localStorage.getItem("searchName");
-      
-      console.log("hello" + role);
       if(role === `:"teacher"`){
         this.enableBtn = true;
         
@@ -58,9 +56,11 @@ export class StudentsComponent implements OnInit {
   }
 
   async deleteStudent(id:number){
-    const stringId:string = id.toString(); 
-    const deleted = await this.studentSevice.terminateStudent(stringId);
-    this.students = await this.studentSevice.getAllStudents();
+    if(confirm("Confirm Student Ejection From Airlock")){
+      const stringId:string = id.toString(); 
+      const deleted = await this.studentSevice.terminateStudent(stringId);
+      this.students = await this.studentSevice.getAllStudents();
+    }
   }
 
   goToStudent(student:Student):void{

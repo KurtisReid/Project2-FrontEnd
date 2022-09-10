@@ -20,10 +20,12 @@ export class NavBarComponent implements OnInit {
   async getStudent(enteredName:string)
   {
 
+
     
     localStorage.setItem("searchName", enteredName);
     console.log(enteredName)
     
+
     location.reload();
   }
   

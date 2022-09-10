@@ -40,7 +40,14 @@ export class GradeutilService {
 
   async deleteGrade(id:number):Promise<string>{
     const observable = this.http.delete<string>(this.baseUrl + "/grades/" + id);
-    const grades = await firstValueFrom(observable);
-    return grades;
+    //const grades = await firstValueFrom(observable);
+    try{
+      const deleted = await firstValueFrom(observable);
+      return deleted;
+    }catch(e){
+      console.log("some error with firstValueFrom");
+      return "Error";
+    }
+    //return grades;
   }
 }
