@@ -13,8 +13,8 @@
   <tbody>
     <tr *ngFor="let g of grades">
       <th scope="row" class="table-primary">{{ g.gId }}</th>
-      <td class="table-secondary">{{ g.timeReported }}</td>
-      <td class="table-success">{{ g.behavior }}</td>
+      <td class="table-secondary">{{ g.timeReported | date:'medium' }}</td>
+      <td class="table-success" >{{ g.behavior }}</td>
       <td class="table-info">{{ g.note }}</td>
       <td *ngIf="enableBtn"><button class="btn btn-danger" (click)="deleteGrade(g.gId)">delete</button></td>
     </tr>

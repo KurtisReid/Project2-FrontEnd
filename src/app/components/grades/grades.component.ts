@@ -35,7 +35,7 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
       }else if(role === "guardian"){
         this.enableBtn = false;
       }
-      this.grades = this.getTime(this.grades);
+      
 
       
     })();
@@ -50,12 +50,18 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
       var ti = Number(g[i].timeReported);
       var myDate = new Date( ti *1000);
       console.log(myDate);
-      g[i].timeReported = myDate.toDateString();
+      
       console.log(g[i].timeReported);
     }
     return g;
 
 
+  }
+  getTimeByNum(g: Number)
+  {
+    var ti = Number(g);
+    var myDate = new Date( ti *1000);
+    return myDate;
   }
 
   async deleteGrade(gIds:number)

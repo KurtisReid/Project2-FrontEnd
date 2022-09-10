@@ -51,7 +51,7 @@ export class GradeFormComponent implements OnInit {
     const newGrade: Grade = {
       gId: 0,
       studentId: this.students.id,
-      timeReported: (Date.now() / 1000).toString(),
+      timeReported: Date.now() / 1000,
       note: this.note,
       behavior: radioGrade,
     };
