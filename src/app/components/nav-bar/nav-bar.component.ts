@@ -13,6 +13,7 @@ export class NavBarComponent implements OnInit {
   constructor(private studentService:StudentutilService, private router: Router) { }
 
   ngOnInit(): void {
+  
   }
 
   enteredName: string = ""
