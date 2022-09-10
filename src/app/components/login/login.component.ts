@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     console.log("registerLogin");
     const login: Login = {username:this.username, password:this.password}
     const jwt: string = await this.loginService.sendLoginCredentials(login);
-    console.log("i got it");
-    console.log(jwt);
+    
+    
     this.savedJwt = jwt;
     // check if gaurdian or teacher
     const role: string = await this.loginService.getRole(this.savedJwt);
