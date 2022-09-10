@@ -21,20 +21,33 @@ export class StudentsComponent implements OnInit {
 
     (async () => {
       const role = localStorage.getItem("role");
+      const searchedStudent = localStorage.getItem("searchName");
+      
       console.log("hello" + role);
       if(role === `:"teacher"`){
-        console.log("hello you are inside teacher role");
-        this.students = await this.studentSevice.getAllStudents();
         this.enableBtn = true;
+        
+        if(searchedStudent != null && searchedStudent.length != 0){
+          this.students = await this.studentSevice.getStudentByName(searchedStudent);
+        }else{
+          this.students = await this.studentSevice.getAllStudents();
+        }
+        
+        
       }else if(role === `:"guardian"`){
-        console.log("Gardians rule");
-        const username = localStorage.getItem("username");
-        console.log(username);
         this.enableBtn = false;
-        if(username != null){
+        const username = localStorage.getItem("username");
+        
+        if(searchedStudent != null && searchedStudent.length != 0){
+          this.students = await this.studentSevice.getStudentByName(searchedStudent);
+        }else if(username != null){
           this.students = await this.studentSevice.getStudentsByGuardian(username);
         }
       }
+
+      
+      
+      
 
       this.students = this.students.sort((s1,s2) => {
         if(s1.lastName < s2.lastName) return -1

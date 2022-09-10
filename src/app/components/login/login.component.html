@@ -7,7 +7,7 @@
     <div class="input-group mb-3">
       <span class="input-group-text">Username</span>
       <input
-        id="usernameInput"
+        id="floatingInput"
         type="text"
         placeholder="Username"
         class="form-control"
@@ -19,11 +19,11 @@
     <div class="input-group mb-3">
       <span class="input-group-text">Password</span>
       <input
-        id="passwordInput"
-        type="text"
+        id="floatingPassword"
+        type="password"
+        class="form-control"
         placeholder="Password"
         for="exampleInputPassword1"
-        class="form-control"
         [(ngModel)]="password"
         [ngModelOptions]="{ standalone: true }"
       />

@@ -6,11 +6,12 @@
       <!-- <legend>Add a student</legend> -->
 
       <div class="input-group mb-3">
-        <span class="input-group-text">First Name</span>
+        <span id="radioGradeGroup" class="input-group-text">First Name</span>
         <input
           name="firstName"
           type="text"
           placeholder="Tommy"
+          class="form-control"
           [(ngModel)]="firstName"
         />
       </div>
@@ -21,6 +22,7 @@
           name="lastName"
           type="text"
           placeholder="Hudson"
+          class="form-control"
           [(ngModel)]="lastName"
         />
       </div>
@@ -31,12 +33,17 @@
           name="guardianUsername"
           type="text"
           placeholder="hudson1980"
+          class="form-control"
           [(ngModel)]="guardianUsername"
           [ngModelOptions]="{ standalone: true }"
         />
       </div>
     </fieldset>
 
-    <button class="btn btn-primary" (click)="register()">Submit</button>
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg" (click)="register()">
+        Submit
+      </button>
+    </div>
   </form>
 </div>
