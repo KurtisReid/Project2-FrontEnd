@@ -35,8 +35,26 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
       }else if(role === "guardian"){
         this.enableBtn = false;
       }
+      this.grades = this.getTime(this.grades);
+
       
     })();
+
+  }
+
+  getTime(g: Grade[])
+  {
+    
+    for (let i = 0; i < g.length; i++)
+    {
+      var ti = Number(g[i].timeReported);
+      var myDate = new Date( ti *1000);
+      console.log(myDate);
+      g[i].timeReported = myDate.toDateString();
+      console.log(g[i].timeReported);
+    }
+    return g;
+
 
   }
 
