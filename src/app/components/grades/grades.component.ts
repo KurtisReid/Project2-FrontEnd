@@ -26,13 +26,12 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
   ngOnInit(): void {
     (async () => {
       this.students = this.studentTracker.getStudent();
-      console.log(this.students);
       this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
       
       const role = localStorage.getItem("role");
-      if(role === "teacher"){
+      if(role === `:"teacher"`){
         this.enableBtn = true;
-      }else if(role === "guardian"){
+      }else if(role === `:"guardian"`){
         this.enableBtn = false;
       }
       
@@ -42,9 +41,10 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
 
   async deleteGrade(gIds:number)
   {
-    const deletedGrade: string = await this.gradeService.deleteGrade(gIds);
-    this.retStr = deletedGrade;
-
+    if(confirm("Confirm Grade Cover-up")){
+      const deletedGrade: string = await this.gradeService.deleteGrade(gIds);
+      this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
+    }
   }
 
 }

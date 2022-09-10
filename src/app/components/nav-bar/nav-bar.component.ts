@@ -18,13 +18,7 @@ export class NavBarComponent implements OnInit {
   enteredName: string = ""
   async getStudent(enteredName:string)
   {
-    if(enteredName.length > 0){
-      const checkedName = enteredName[0].toUpperCase() + enteredName.substring(1);
-      localStorage.setItem("searchName", checkedName);
-    }else{
-      localStorage.setItem("searchName", enteredName);
-    }
-    
+    localStorage.setItem("searchName", enteredName);
     location.reload();
   }
   
