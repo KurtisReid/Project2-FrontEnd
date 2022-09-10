@@ -14,6 +14,7 @@ import { StudentsComponent } from './components/students/students.component';
 import { GradesPageComponent } from './components/grades-page/grades-page.component';
 import { StudentPageComponent } from './components/student-page/student-page.component';
 import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './components/login/login.component';
     GradesComponent,
     GradesPageComponent,
     StudentPageComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
 
   ],
   imports: [
