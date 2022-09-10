@@ -8,7 +8,7 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Guardian Username</th>
-      <th *ngIf="enableBtn">Remove Student</th>
+      <th *ngIf="enableBtn"></th>
     </tr>
   </thead>
   <tbody>
@@ -24,10 +24,16 @@
         {{ s.guardianUsername }}
       </td>
 
-      <td *ngIf="enableBtn">
-        <button class="btn btn-danger" (click)="deleteStudent(s.id)">
-          Remove
-        </button>
+      <td *ngIf="enableBtn" class="table-info">
+        <div class="text-center">
+          <button
+            *ngIf="enableBtn"
+            class="btn btn-danger"
+            (click)="deleteStudent(s.id)"
+          >
+            Remove
+          </button>
+        </div>
       </td>
     </tr>
   </tbody>

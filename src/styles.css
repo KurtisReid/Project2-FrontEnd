@@ -45,3 +45,7 @@ h2 {
 table {
   border-radius: 10%;
 }
+
+#radioGradeGroup {
+  padding-left: 2em;
+}
