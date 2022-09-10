@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Enterprise Daycare</a>
+    <a class="navbar-brand" href="#">U.S.S Kinderprise</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -24,6 +24,14 @@
             >Temp Grade Page</a
           >
         </li>
+        
+        <!-- Searchbar -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+
         <input id="studentNameInput" type="text" placeholder="Search for student by first name" class="form-control" [(ngModel)]= "enteredName">
         <button id="searchBtn" class="btn btn-primary" (click)="getStudent(enteredName)">Search</button>
         
