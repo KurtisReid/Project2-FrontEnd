@@ -43,7 +43,7 @@ export class StudentutilService {
   }
 
   async terminateStudent(id:string):Promise<string>{
-    const observable = this.http.delete<string>("http://localhost:8080/students/" + id);
+    const observable = this.http.delete<string>(this.baseUrl + "/students/" + id);
 
     //const deleted = await firstValueFrom(observable);
     //return deleted;

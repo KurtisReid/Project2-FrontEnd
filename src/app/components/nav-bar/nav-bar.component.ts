@@ -13,18 +13,19 @@ export class NavBarComponent implements OnInit {
   constructor(private studentService:StudentutilService, private router: Router) { }
 
   ngOnInit(): void {
+  
   }
 
   enteredName: string = ""
   async getStudent(enteredName:string)
   {
-    if(enteredName.length > 0){
-      const checkedName = enteredName[0].toUpperCase() + enteredName.substring(1);
-      localStorage.setItem("searchName", checkedName);
-    }else{
-      localStorage.setItem("searchName", enteredName);
-    }
+
+
     
+    localStorage.setItem("searchName", enteredName);
+    console.log(enteredName)
+    
+
     location.reload();
   }
   

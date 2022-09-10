@@ -26,25 +26,49 @@ constructor(private gradeService:GradeutilService, private studentService:Studen
   ngOnInit(): void {
     (async () => {
       this.students = this.studentTracker.getStudent();
-      console.log(this.students);
       this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
       
       const role = localStorage.getItem("role");
-      if(role === "teacher"){
+      if(role === `:"teacher"`){
         this.enableBtn = true;
-      }else if(role === "guardian"){
+      }else if(role === `:"guardian"`){
         this.enableBtn = false;
       }
+      
+
       
     })();
 
   }
 
+  getTime(g: Grade[])
+  {
+    
+    for (let i = 0; i < g.length; i++)
+    {
+      var ti = Number(g[i].timeReported);
+      var myDate = new Date( ti *1000);
+      console.log(myDate);
+      
+      console.log(g[i].timeReported);
+    }
+    return g;
+
+
+  }
+  getTimeByNum(g: Number)
+  {
+    var ti = Number(g);
+    var myDate = new Date( ti *1000);
+    return myDate;
+  }
+
   async deleteGrade(gIds:number)
   {
-    const deletedGrade: string = await this.gradeService.deleteGrade(gIds);
-    this.retStr = deletedGrade;
-
+    if(confirm("Confirm Grade Cover-up")){
+      const deletedGrade: string = await this.gradeService.deleteGrade(gIds);
+      this.grades = await this.gradeService.getGradeByStudentId(this.students.id);
+    }
   }
 
 }
