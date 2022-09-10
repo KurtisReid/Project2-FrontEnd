@@ -14,20 +14,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-
-
         <form class="d-flex">
-        <input id="studentNameInput" type="search" placeholder="Search for student by first name" class="form-control me-2" [(ngModel)]="enteredName" [ngModelOptions]="{standalone: true}" aria-label="Search">
-        <button id="searchBtn" type="submit" class="btn btn-outline-success" (click)="getStudent(enteredName)">Search</button>
-      </form>
-
-        
-
-
-
-
-        
-
+          <input
+            id="studentNameInput"
+            type="search"
+            placeholder="Search for student by first name"
+            class="form-control me-2"
+            [(ngModel)]="enteredName"
+            aria-label="Search"
+          />
+          <button
+            id="searchBtn"
+            type="submit"
+            class="btn btn-outline-success"
+            (click)="getStudent(enteredName)"
+          >
+            Search
+          </button>
+        </form>
       </ul>
     </div>
   </div>
