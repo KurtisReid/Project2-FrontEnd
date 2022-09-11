@@ -2,31 +2,70 @@
 <div class="form">
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <h4>Add a Student</h4>
-      <!-- <legend>Add a student</legend> -->
+    <!-- <legend>Add a student</legend> -->
 
-      <div class="input-group mb-3">
-        <span id="radioGradeGroup" class="input-group-text">First Name</span>
-        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls['firstName'].errors }" />
-        <div *ngIf="submitted && registerForm.controls['firstName'].errors" class="text-danger">
-          <div *ngIf="registerForm.controls['firstName'].errors['required']">Required</div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">First Name</span>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': submitted && registerForm.controls['firstName'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerForm.controls['firstName'].errors"
+        class="text-danger"
+      >
+        <div *ngIf="registerForm.controls['firstName'].errors['required']">
+          Required
         </div>
       </div>
+    </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text">Last Name</span>
-        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls['lastName'].errors }" />
-        <div *ngIf="submitted && registerForm.controls['lastName'].errors" class="text-danger">
-          <div *ngIf="registerForm.controls['lastName'].errors['required']">Required</div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Last Name</span>
+      <input
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': submitted && registerForm.controls['lastName'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerForm.controls['lastName'].errors"
+        class="text-danger"
+      >
+        <div *ngIf="registerForm.controls['lastName'].errors['required']">
+          Required
         </div>
       </div>
+    </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text">Guardian Username</span>
-        <input type="text" formControlName="guardianUsername" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls['guardianUsername'].errors }" />
-        <div *ngIf="submitted && registerForm.controls['guardianUsername'].errors" class="text-danger">
-          <div *ngIf="registerForm.controls['guardianUsername'].errors['required']">Required</div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Guardian Username</span>
+      <input
+        type="text"
+        formControlName="guardianUsername"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid':
+            submitted && registerForm.controls['guardianUsername'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && registerForm.controls['guardianUsername'].errors"
+        class="text-danger"
+      >
+        <div
+          *ngIf="registerForm.controls['guardianUsername'].errors['required']"
+        >
+          Required
         </div>
       </div>
+    </div>
 
     <div class="text-center">
       <button class="btn btn-primary btn-lg">Submit</button>

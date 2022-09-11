@@ -2,20 +2,60 @@
   padding-bottom: 1em;
 }
 
-.login-box {
+.login-box,
+.login-fancy {
   left: 50%;
   top: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  background-color: rgba(250, 235, 215, 0.9);
-  width: 30%;
-  align-items: center;
-  padding: 2rem;
-
-  border-style: solid;
+  border-radius: 50%;
 }
 
-#login-page {
-  /* background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"); */
-  
+.login-box {
+  background-color: rgba(139, 186, 255, 0.65);
+  align-items: center;
+  padding: 2rem;
+  width: 500px;
+  height: 500px;
+}
+
+.login-fancy {
+  border-color: rgba(255, 255, 255, 0.5);
+  border-style: solid;
+  border-width: 5px;
+  width: 535px;
+  height: 535px;
+}
+
+.login-text {
+  position: relative;
+  top: 18%;
+}
+
+input,
+label,
+button,
+p {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 300;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  padding: 0.375rem 0.75rem;
+  /* font-size: 1rem; */
+  font-weight: 300;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+}
+
+.btnPad {
+  padding-top: 2rem;
 }

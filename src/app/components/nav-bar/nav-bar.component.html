@@ -1,38 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">U.S.S Kinderprise</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <form class="d-flex">
-          <input
-            id="studentNameInput"
-            type="search"
-            placeholder="Search for student by first name"
-            class="form-control me-2"
-            [(ngModel)]="enteredName"
-            aria-label="Search"
-          />
-          <button
-            id="searchBtn"
-            type="submit"
-            class="btn btn-outline-success"
-            (click)="getStudent(enteredName)"
-          >
-            Search
-          </button>
-        </form>
-      </ul>
-    </div>
+    <a class="navbar-brand logo" href="/students-page">U.S.S Kinderprise</a>
+
+    <form class="d-flex w-50 p-3">
+      <input
+        id="studentNameInput"
+        class="text-center"
+        type="search"
+        placeholder="Search for student by first name"
+        class="form-control me-2 col-med-4"
+        [(ngModel)]="enteredName"
+        [ngModelOptions]="{ standalone: true }"
+        aria-label="Search"
+      />
+      <button
+        id="searchBtn"
+        type="submit"
+        class="btn btn-outline-primary"
+        (click)="getStudent(enteredName)"
+      >
+        Search
+      </button>
+      <div class="d-flex align-items-center">
+        <a
+          id="logout"
+          class="nav-link active"
+          aria-current="page"
+          href="/login-page"
+          >Logout</a
+        >
+      </div>
+    </form>
   </div>
 </nav>

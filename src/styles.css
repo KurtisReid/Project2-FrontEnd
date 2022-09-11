@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden;
   background: url(../src/assets/images/loginbackground.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -9,14 +10,51 @@ body {
   background-repeat: no-repeat;
 }
 
+h2,
+h4 {
+  font-family: "Coda Caption", sans-serif;
+}
+
 h2 {
   font-size: 3rem;
   text-align: center;
+  color: whitesmoke;
+}
+
+h4 {
+  font-family: "JetBrains Mono", monospace;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .page-header {
+  margin-top: 1em;
   padding: 4em;
-  background-color: aquamarine;
+  /* background-color: rgba(8, 51, 96, 0.5); */
+  /* background-image: radial-gradient(
+    circle 800px at 51.2% 51%,
+    rgba(11, 27, 103, 0.95) 0%,
+    rgba(16, 66, 157, 0.75) 0%,
+    rgba(11, 27, 103, 0.65) 10.3%,
+    rgba(11, 27, 103, 0.2) 50.8%,
+    rgba(11, 27, 103, 0.1) 40.4%,
+    rgba(16, 66, 157, 0.1) 90.2%,
+    rgba(187, 187, 187, 0) 100.2%
+  ); */
+  background-image: linear-gradient(
+    to left,
+    rgb(48, 207, 208, 0.25) 0%,
+    rgb(51, 8, 103, 0.35) 65%
+  );
   text-align: center;
 }
 
@@ -32,7 +70,12 @@ h2 {
 
 .form {
   padding: 2em;
-  background-color: beige;
+  /* background-color: beige; */
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 0.9) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  );
   display: flex;
   flex-direction: column;
   border-radius: 5%;
@@ -53,6 +96,12 @@ table {
   border-radius: 10%;
 }
 
-#radioGradeGroup {
-  padding-left: 2em;
+th {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+}
+
+td {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 300;
 }

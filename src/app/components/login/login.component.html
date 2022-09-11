@@ -1,39 +1,48 @@
-<div class="container login-box">
-  <div class="text-center">
-    <h2 id="login-h2">Welcome!</h2>
-    <p>Please Login</p>
+<div class="container">
+  <div class="login-fancy">
+    <div class="login-box">
+      <div class="login-text">
+        <div class="text-center">
+          <h2 id="login-h2">Welcome!</h2>
+          <p>Please Login</p>
+        </div>
+        <form>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Username</span>
+            <input
+              id="floatingInput"
+              type="text"
+              placeholder="Username"
+              class="form-control"
+              [(ngModel)]="username"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Password</span>
+            <input
+              id="floatingPassword"
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              for="exampleInputPassword1"
+              [(ngModel)]="password"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+
+          <div class="btnPad text-center">
+            <button
+              id="loginBtn"
+              class="btn btn-primary btn-lg"
+              (click)="registerLogin()"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <form>
-    <div class="input-group mb-3">
-      <span class="input-group-text">Username</span>
-      <input
-        id="floatingInput"
-        type="text"
-        placeholder="Username"
-        class="form-control"
-        [(ngModel)]="username"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
-
-    <div class="input-group mb-3">
-      <span class="input-group-text">Password</span>
-      <input
-        id="floatingPassword"
-        type="password"
-        class="form-control"
-        placeholder="Password"
-        for="exampleInputPassword1"
-        [(ngModel)]="password"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
-
-    <div class="text-center">
-      <button id="loginBtn" class="btn btn-primary" (click)="registerLogin()">
-        Login
-      </button>
-    </div>
-  </form>
 </div>
-
