@@ -1,0 +1,12 @@
+.page-header {
+  margin-top: 1em;
+  padding: 4em;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-image: linear-gradient(
+    to left,
+    rgb(48, 207, 208, 0.25) 0%,
+    rgb(51, 8, 103, 0.35) 65%
+  );
+  text-align: center;
+}
